@@ -8,4 +8,8 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  //处理与ant-design-vue冲突的问题
+  corePlugins: {
+    preflight: false
+  }
 }

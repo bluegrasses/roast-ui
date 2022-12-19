@@ -1,6 +1,6 @@
 import axios from "axios";
 import {ROAST_CONFIG} from "@/conf/config";
-
+import {getToken} from "@/utils/token";
 // axios interceptor bear token
 
 const request=axios.create({
@@ -12,8 +12,8 @@ const request=axios.create({
 });
 request.interceptors.request.use(
     config => {
-        // const token = localStorage.getItem('token');
-        const token = "1|K3MYT1zcUsoFvb5RfEOU28Qzy2E6g8hUFmKCQBi1";
+        const token = getToken();
+        // const token = "1|K3MYT1zcUsoFvb5RfEOU28Qzy2E6g8hUFmKCQBi1";
         if (token) {
             config.headers['Authorization'] = 'Bearer '+ token;
         }
@@ -27,6 +27,7 @@ request.interceptors.request.use(
 // axios interceptor error
 request.interceptors.response.use(
     response => {
+        console.log('response:',response);
         return response;
     },
     error => {
