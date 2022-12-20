@@ -9,7 +9,6 @@ this.$store.getters['cafes/getCafesLoadStatus'];
 this.$store.dispatch('cafes/loadCafes');
 ```
 
-
 高德开发者文档
 
 https://lbs.amap.com/api/webservice/summary

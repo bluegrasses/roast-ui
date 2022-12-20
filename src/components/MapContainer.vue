@@ -34,6 +34,7 @@ export default {
     return {
       map:null,
       makers: [],
+      infoWindow: [],
     }
   },
   methods: {
@@ -60,11 +61,25 @@ export default {
 // 为所有咖啡店创建点标记
     buildMarkers() {
       this.markers = [];
+      //自定义点标记图标
       for (var i = 0; i <this.cafes.length ; i++) {
         var marker = new AMap.Marker({
           position: new AMap.LngLat(parseFloat(this.cafes[i].latitude), parseFloat(this.cafes[i].longitude)),
-          title: this.cafes[i].name
+          title: this.cafes[i].name,
+          map: this.map,
         });
+        // 为每个咖啡店创建信息窗体
+        var infoWindow = new AMap.InfoWindow({
+          content: this.cafes[i].name
+        });
+        this.infoWindow.push(infoWindow);
+
+        // 绑定点击事件到点标记对象，点击打开上面创建的信息窗体
+        marker.on('click', function () {
+          infoWindow.open(this.getMap(), this.getPosition());
+        });
+
+
         // 将每个点标记放到点标记数组中
         this.markers.push(marker);
       }
