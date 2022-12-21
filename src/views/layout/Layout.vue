@@ -15,6 +15,7 @@ export default {
   created() {
     this.$store.dispatch("user/loadUser");
     this.$store.dispatch("cafes/loadCafes");
+    this.$store.dispatch('loadBrewMethods')
   }
 }
 </script>

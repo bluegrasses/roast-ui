@@ -21,13 +21,14 @@ export  default {
      * 添加咖啡
      * Post /api/cafes
      */
-    postNewCafe: function (name, address, city, state, zip ) {
+    postNewCafe: function (name, locations, website, description, roaster ) {
+        console.log('locations', locations);
         return axios.post(ROAST_CONFIG.API_URL + '/cafes', {
             name: name,
-            address: address,
-            city: city,
-            state: state,
-            zip: zip
+            locations: locations,
+            website: website,
+            description: description,
+            roaster: roaster
         });
     }
 
