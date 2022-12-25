@@ -30,7 +30,7 @@
                 <div class="grid-x grid-padding-x" v-for="(location, key) in locations" v-bind:key="key">
                     <div class="large-12 medium-12 small-12 cell">
                         <h3>位置</h3>
-                    </div>
+                    </div>™
                     <div class="large-6 medium-6 small-12 cell">
                         <label>位置名称
                             <input type="text" placeholder="位置名称" v-model="locations[key].name">
@@ -64,7 +64,7 @@
                     <!--冲泡方法设置-->
                     <div class="large-12 medium-12 small-12 cell">
                         <label>支持的冲泡方法</label>
-                        <span class="brew-method" v-for="(brewMethod) in brewMethods" v-bind:key="brewMethod.id">
+                        <span class="brew-method" v-for="(brewMethod) in brewMethods">
                             <input v-bind:id="'brew-method-'+brewMethod.id+'-'+key" type="checkbox"
                                    v-bind:value="brewMethod.id"
                                    v-model="locations[key].methodsAvailable"

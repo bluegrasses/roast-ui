@@ -15,5 +15,6 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     //关闭命名检测
     "vue/multi-word-component-names":"off",
+   "vue/require-v-for-key": 'off'
   }
 }

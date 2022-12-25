@@ -12,6 +12,7 @@ const request=axios.create({
 });
 request.interceptors.request.use(
     config => {
+        console.log('请求参数：', config);
         const token = getToken();
         // const token = "1|K3MYT1zcUsoFvb5RfEOU28Qzy2E6g8hUFmKCQBi1";
         if (token) {
