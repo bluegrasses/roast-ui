@@ -30,6 +30,20 @@ export  default {
             description: description,
             roaster: roaster
         });
+    },
+
+    /**
+     * 定义用户喜欢的咖啡
+     */
+    postLikeCafe: function (cafeID) {
+        return axios.post(ROAST_CONFIG.API_URL + '/cafes/' + cafeID + '/like');
+    },
+
+    /**
+     * 取消用户喜欢的咖啡
+     */
+    deleteLikeCafe: function (cafeID) {
+        return axios.delete(ROAST_CONFIG.API_URL + '/cafes/' + cafeID + '/like');
     }
 
 }

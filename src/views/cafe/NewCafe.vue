@@ -265,11 +265,15 @@ export default {
         'addCafeStatus': function () {
             if (this.addCafeStatus === 2) {
                 this.clearForm();
-                $("#cafe-added-successfully").show().delay(5000).fadeOut();
+                // 这里替换一下
+                alert('咖啡店已添加');
+                this.$router.push({name: 'cafes'});
+                // $("#cafe-added-successfully").show().delay(5000).fadeOut();
             }
 
             if (this.addCafeStatus === 3) {
-                $("#cafe-added-unsuccessfully").show().delay(5000).fadeOut();
+              alert('咖啡店添加失败');
+                // $("#cafe-added-unsuccessfully").show().delay(5000).fadeOut();
             }
         }
     },
